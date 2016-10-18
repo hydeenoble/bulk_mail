@@ -9,6 +9,8 @@
 require_once("phpmailer/class.phpmailer.php");
 
 $mail = new PHPMailer();
+//$mail->isSMTP();
+//$mail->SMTPSecure = 'tls';
 
 if(isset($_POST['send'])){
 
@@ -24,19 +26,21 @@ if(isset($_POST['send'])){
         $str_recipients = $_POST['recipients'];
         $body = $_POST['body'];
 
-        $mail->setFrom("hydeenoble39@gmail.com", $sendername);
+        $mail->setFrom("hydeenoble@stunafrica.com.ng", $sendername);
         $mail->Subject = $subject;
         $mail->Body = $body;
 
         $recipients = explode(";",$str_recipients);
 
 
-        for($i = 0; $i < count($recipients); $i++){
-            $recipient = $recipients[$i];
+        foreach ($recipients as $recipient){
             $mail->addAddress($recipient);
-            $mail->send();
         }
 
+
+        
     }
+
+    $mail->send();
 }
 

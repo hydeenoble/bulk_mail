@@ -1,8 +1,8 @@
 <?php
-//require_once ('mailsender.php');
-//?>
-<!---->
-<?php //echo (htmlspecialchars($_SERVER['PHP_SELF']))?>
+require_once ('mailsender.php');
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,18 +15,18 @@
     <div class="container-fluid text-center main">
         <h1 class="header"><span class="glyphicon glyphicon-envelope"></span> WELCOME TO THE MAILING APP</h1>
 
-        <form action="mailsender.php" class="form text-center" method="post" enctype="multipart/form-data">
+        <form action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF']))?>" class="form text-center" method="post" enctype="multipart/form-data">
            <div class="row">
                <div class="col-sm-4 form-group">
-                     <input type="text" class="form-control" name="sender_name" placeholder="From" />
+                     <input type="text" class="form-control" name="sender_name" placeholder="From" required/>
                </div>
                <div class="col-sm-8 form-group">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject"/>
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required/>
                </div><br/>
            </div>
             <textarea class="form-control recipient" rows="8" placeholder="Enter the email of the recipients separated by a semicolon(;)"
-                      name="recipients"></textarea>
-            <textarea class="form-control msg-body" rows="8" placeholder="Message Body" name="body"></textarea>
+                      name="recipients" required></textarea>
+            <textarea class="form-control msg-body" rows="8" placeholder="Message Body" name="body" required></textarea>
             <input type="submit" class="btn-primary btn-lg send" value="send" name="send"/>
         </form>
     </div>
