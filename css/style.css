@@ -1,0 +1,33 @@
+body{
+    font-family: Cursive;
+    background-image: url("../images/img1.jpg");
+}
+.main{
+    background-color: rgba(190,190,190,0.92);
+    padding:0% 10% 0% 10%;
+}
+.header{
+    font-family:Cursive;
+    color:#990033;
+    margin-bottom:2%;
+}
+.form{
+    font-size: xx-large;
+
+}
+
+.glyphicon-envelope{
+    font-size: 50px;
+}
+
+.recipient {
+    margin-bottom: 2%;
+}
+
+.msg-body {
+    margin-bottom: 3%;
+}
+
+.send{
+    background:#990033;
+}
